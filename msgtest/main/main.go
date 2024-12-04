@@ -54,7 +54,7 @@ var (
 )
 
 func InitWithFlag() {
-	flag.IntVar(&totalOnlineUserNum, "o", 20000, "total online user num")
+	flag.IntVar(&totalOnlineUserNum, "o", 20, "total online user num")
 	flag.IntVar(&randomSender, "rs", 0, "random sender num")
 	flag.IntVar(&randomReceiver, "rr", 0, "random receiver num")
 	flag.IntVar(&start, "s", 0, "start user")
@@ -119,6 +119,7 @@ func main() {
 	time.Sleep(10 * time.Second)
 	//
 	if isRegisterUser {
+		log.ZInfo(ctx, "注册用户==============================================")
 		if err := p.RegisterUsers(append(f, o...), nil, nil); err != nil {
 			log.ZError(ctx, "Sample UserID failed", err)
 			return

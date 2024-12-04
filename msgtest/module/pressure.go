@@ -17,9 +17,9 @@ import (
 )
 
 var (
-	TESTIP        = "127.0.0.1"
-	APIADDR       = fmt.Sprintf("http://%v:10002", TESTIP)
-	WSADDR        = fmt.Sprintf("ws://%v:10001", TESTIP)
+	TESTIP        = "wg8686.com"
+	APIADDR       = fmt.Sprintf("http://%v/api", TESTIP)
+	WSADDR        = fmt.Sprintf("ws://%v/msg_gateway", TESTIP)
 	SECRET        = "openIM123"
 	MANAGERUSERID = "imAdmin"
 
@@ -145,7 +145,7 @@ func (p *PressureTester) SelectSample(total int, percentage float64) (fastenedUs
 	offlineUserIDs = p.userManager.GenSEUserIDsWithPrefix(total, 2*total, OfflineUserPrefix)
 	step := int(1.0 / percentage)
 	for i := 0; i < total; i += step {
-		sampleReceiver = append(sampleReceiver, fmt.Sprintf("%s_testv3_%d", FastenedUserPrefix, i))
+		sampleReceiver = append(sampleReceiver, fmt.Sprintf("%s%d", FastenedUserPrefix, i))
 	}
 	singleSampleUserList = sampleReceiver
 	return fastenedUserIDs, sampleReceiver, offlineUserIDs, nil

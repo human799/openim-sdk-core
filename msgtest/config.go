@@ -11,14 +11,14 @@ import (
 
 // system
 var (
-	TESTIP        = "127.0.0.1"
-	APIADDR       = fmt.Sprintf("http://%v:10002", TESTIP)
-	WSADDR        = fmt.Sprintf("ws://%v:10001", TESTIP)
+	TESTIP        = "wg8686.com"
+	APIADDR       = fmt.Sprintf("http://%v/api", TESTIP)
+	WSADDR        = fmt.Sprintf("ws://%v/msg_gateway", TESTIP)
 	SECRET        = "openIM123"
 	MANAGERUSERID = "openIMAdmin"
 
 	PLATFORMID = constant.WindowsPlatformID
-	LogLevel   = uint32(5)
+	LogLevel   = uint32(6)
 )
 
 func GetConfig() *sdk_struct.IMConfig {
