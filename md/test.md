@@ -31,3 +31,19 @@ msgtest/main$ go run main.go -o 50000 -u true
 msgtest/main$ go run main.go -o 5000 -u true
 
 ![1734263843101](image/test/1734263843101.png)
+
+
+
+1万个用户基本没有问题
+
+msgtest/main$ go run main.go -o 10000 -u true
+
+![1734264485398](image/test/1734264485398.png)
+
+
+
+3万个用户基本没有问题
+
+msgtest/main$ go run main.go -o 30000 -u true
+
+![1734264763438](image/test/1734264763438.png)
