@@ -17,10 +17,17 @@ integration_test$ go run main.go -reg -u 1000000
 
 启动5万在线用户
 
-msgtest/main$ go run main.go -o 50000 -s 49500 -e 99500 -c 100 -i 500 -rs 1000 -rr 1000
+msgtest/main$ go run main.go -o 50000 -u true
 
 ![1734262841296](image/test/1734262841296.png)
 
 时间坚持2分钟以上,CPU会有突高
 
 ![1734263519371](image/test/1734263519371.png)
+
+
+五千个用户基本没有问题
+
+msgtest/main$ go run main.go -o 5000 -u true
+
+![1734263843101](image/test/1734263843101.png)
